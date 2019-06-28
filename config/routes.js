@@ -20,6 +20,8 @@ module.exports = server => {
   server.get("/exercises", exercises);
   // ======== // PUT // ======== //
   server.put("/exercise/:id", exerciseUpdate);
+  // ======== // DELETE // ======== //
+  server.delete("/exercise/:id", exerciseDelete);
 };
 // ======== // END OF SERVER ROUTES // ======== //
 
@@ -171,6 +173,20 @@ function exerciseUpdate(req, res) {
         .then(exercise => {
           res.status(200).json(exercise);
         });
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    });
+}
+
+function exerciseDelete(req, res) {
+  const { id } = req.params;
+
+  db("exercises")
+    .where({ id })
+    .del()
+    .then(exercise => {
+      res.status(200).json(exercise);
     })
     .catch(err => {
       res.status(500).json(err);
