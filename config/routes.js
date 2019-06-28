@@ -18,6 +18,7 @@ module.exports = server => {
   server.get("/users", users, restricted);
   server.get("/users/:id", usersId, restricted);
   server.get("/exercises", exercises);
+  server.get("/user/exercise/:id", getExercises);
   // ======== // PUT // ======== //
   server.put("/exercise/:id", exerciseUpdate);
   // ======== // DELETE // ======== //
@@ -136,6 +137,22 @@ function exercises(req, res) {
       res.status(200).json(exercise);
     })
     .catch(err => res.status(500).json(err));
+}
+
+function getExercises(req, res) {
+  const id = req.params.id;
+  db("exercises")
+    .where({ user_id: id })
+    .then(exercises => {
+      if (exercises) {
+        res.status(200).json(exercises);
+      } else {
+        res.status(404).json({ message: "Lol, I cant find yo ID..." });
+      }
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    });
 }
 
 function exercisePost(req, res) {
