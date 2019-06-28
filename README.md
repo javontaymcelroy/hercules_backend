@@ -31,7 +31,7 @@ For Backend Devs: To get this project started on your local machine, clone the r
 }
 ```
 
-### 👩‍💻Users Endpoints 👨‍💻
+### 👩‍💻 Users Endpoints 👨‍💻
 
 | Request        | Route           | Description  |
 | ------------- |:-------------:| -----:|
