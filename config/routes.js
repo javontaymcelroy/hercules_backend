@@ -18,6 +18,8 @@ module.exports = server => {
   server.get("/users", users, restricted);
   server.get("/users/:id", usersId, restricted);
   server.get("/exercises", exercises);
+  // ======== // PUT // ======== //
+  server.put("/exercise/:id", exerciseUpdate);
 };
 // ======== // END OF SERVER ROUTES // ======== //
 
@@ -153,6 +155,26 @@ function exercisePost(req, res) {
         ]);
     })
     .catch(err => res.status(500).json(err));
+}
+
+function exerciseUpdate(req, res) {
+  const changes = req.body;
+  const { id } = req.params;
+
+  db("exercises")
+    .where({ id: id })
+    .update(changes)
+    .then(count => {
+      db("exercises")
+        .where({ id })
+        .first()
+        .then(exercise => {
+          res.status(200).json(exercise);
+        });
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    });
 }
 
 // ======== // END OF EXERCISE FUNCTIONS // ======== //
