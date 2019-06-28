@@ -6,7 +6,7 @@ exports.up = function(knex) {
       .notNullable()
       .unsigned()
       .references("id")
-      .inTable("users");
+      .inTable("user");
     tbl.string("exerciseTitle").notNullable();
     tbl.string("date").notNullable();
     tbl.string("description").notNullable();

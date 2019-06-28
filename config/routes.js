@@ -142,8 +142,8 @@ function exercisePost(req, res) {
       res
         .status(201)
         .json([
-          exercises.exerciseTitle,
           ids[0],
+          exercises.exerciseTitle,
           exercises.date,
           exercises.description,
           exercises.targetRegionArea,
