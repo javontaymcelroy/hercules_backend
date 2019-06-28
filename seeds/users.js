@@ -8,6 +8,9 @@ exports.seed = function(knex, Promise) {
         {
           id: 1,
           username: "admin",
+          firstName: "Jeff",
+          lastName: "Ramirez",
+          emailAddress: "johnappleseed@gmail.com",
           password: "admin"
         }
       ]);
