@@ -13,9 +13,11 @@ module.exports = server => {
   server.post("/register", register);
   server.post("/login", login);
   server.post("/logout", logout);
+  server.post("/exercise", exercisePost);
   // ======== // GET // ======== //
   server.get("/users", users, restricted);
   server.get("/users/:id", usersId, restricted);
+  server.get("/exercises", exercises);
 };
 // ======== // END OF SERVER ROUTES // ======== //
 
@@ -121,6 +123,39 @@ function usersId(req, res) {
 }
 
 // ======== // END OF USER FUNCTIONS // ======== //
+
+// ======== // EXERCISE FUNCTIONS // ======== //
+
+function exercises(req, res) {
+  db("exercises")
+    .then(exercise => {
+      res.status(200).json(exercise);
+    })
+    .catch(err => res.status(500).json(err));
+}
+
+function exercisePost(req, res) {
+  const exercise = req.body;
+  db.insert(exercise)
+    .into("exercises")
+    .then(ids => {
+      res
+        .status(201)
+        .json([
+          exercises.exerciseTitle,
+          ids[0],
+          exercises.date,
+          exercises.description,
+          exercises.targetRegionArea,
+          exercises.reps,
+          exercises.amountLifted,
+          exercises.customImg
+        ]);
+    })
+    .catch(err => res.status(500).json(err));
+}
+
+// ======== // END OF EXERCISE FUNCTIONS // ======== //
 
 // ======== // MISC FUNCTIONS // ======== //
 function restricted(req, res, next) {
