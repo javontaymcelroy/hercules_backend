@@ -4,7 +4,9 @@
 
 ## 🏁 Getting Started
 
-To get this project started on your local machine, clone the repo and open the directory in your chosen terminal and run yarn to install the dependacies. Then, making sure you're in the root folder of the app, run yarn server and you should be good to go! :)
+For Front-End Devs: https://hercules-backend.herokuapp.com/ 👈 Link to the API!
+
+For Backend Devs: To get this project started on your local machine, clone the repo and open the directory in your chosen terminal and run yarn to install the dependacies. Then, making sure you're in the root folder of the app, run yarn server and you should be good to go! :)
 
 
 ## ⚡️  Endpoints
