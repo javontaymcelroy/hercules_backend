@@ -9,7 +9,7 @@ const Users = require("../auth/authenticate");
 
 // ======== // SERVER ROUTES // ======== //
 module.exports = server => {
-  // ========= // POST // ========= //
+  // ======== // POST // ======== //
   server.post("/register", register);
   server.post("/login", login);
   server.post("/logout", logout);
@@ -19,8 +19,6 @@ module.exports = server => {
   server.get("/users/:id", usersId, restricted);
   server.get("/exercises", exercises);
   server.get("/user/exercise/:id", getExercises);
-  server.get("/exercise/:id", exerciseID);
-  server.get("/dashboard", exercisePagination);
   // ======== // PUT // ======== //
   server.put("/exercise/:id", exerciseUpdate);
   // ======== // DELETE // ======== //
@@ -157,19 +155,6 @@ function getExercises(req, res) {
     });
 }
 
-function exerciseID(req, res) {
-  const exerciseID = req.params.id;
-  db("exercises")
-    .where({ id: exerciseID })
-    .first()
-    .then(exercise => {
-      res.status(200).json(exercise);
-    })
-    .catch(error => {
-      res.status(500).json(error);
-    });
-}
-
 function exercisePost(req, res) {
   const exercise = req.body;
   db.insert(exercise)
@@ -225,17 +210,7 @@ function exerciseDelete(req, res) {
     });
 }
 
-function exercisePagination(req, res) {
-  return Users.getAll(req.query, res)
-    .then(resp => {
-      res.json(resp);
-    })
-    .catch(error => {
-      res.status(500).json(error);
-    });
-}
-
-// ========= // END OF EXERCISE FUNCTIONS // ========= //
+// ======== // END OF EXERCISE FUNCTIONS // ======== //
 
 // ======== // MISC FUNCTIONS // ======== //
 function restricted(req, res, next) {
