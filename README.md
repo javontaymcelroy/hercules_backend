@@ -63,7 +63,7 @@ For Backend Devs: To get this project started on your local machine, clone the r
 | ------------- |:-------------:| -----:|
 | GET      | /dashboard?page=1 | returns 1 exercise per page. PAGINATION! 🔥 |
 | GET      | /exercises | returns a list of all exercises that exists within the database. |
-| GET      | /exercise/:id | returns single exercise by the id. |
+| GET      | /exercise/:id | returns an OBJECT of a single exercise by the id. |
 | POST      | /exercise| expects an json object that requires the fields { exerciseTitle, date, description, targetRegionArea, reps (integer), amountLifted (integer), customImg } |
 | PUT      | /exercise/:id | allows updating to the exercise object. |
 | DELETE      | /exercise/:id | deletes object exercise from the array. |
