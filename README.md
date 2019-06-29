@@ -61,6 +61,7 @@ For Backend Devs: To get this project started on your local machine, clone the r
 
 | Request        | Route           | Description  |
 | ------------- |:-------------:| -----:|
+| GET      | /dashboard?page=1 | returns 1 exercise per page. PAGINATION! 🔥 |
 | GET      | /exercises | returns a list of all exercises that exists within the database. |
 | GET      | /exercise/:id | returns single exercise by the id. |
 | POST      | /exercise| expects an json object that requires the fields { exerciseTitle, date, description, targetRegionArea, reps (integer), amountLifted (integer), customImg } |
