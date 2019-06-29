@@ -8,7 +8,8 @@ module.exports = {
   add,
   find,
   findBy,
-  findById
+  findById,
+  getAll
 };
 
 // implementation details
@@ -48,4 +49,21 @@ function findById(id) {
   return db("user")
     .where({ id })
     .first();
+}
+
+function getAll(query, res) {
+  const { page = 1, limit = 1 } = query;
+  return db("exercises")
+    .select(
+      "id",
+      "excerciseTitle",
+      "date",
+      "description",
+      "targetRegionArea",
+      "reps",
+      "amountLifted",
+      "customImg"
+    )
+    .paginate(limit, page, true)
+    .then(result => result);
 }
