@@ -235,7 +235,7 @@ function exercisePagination(req, res) {
     });
 }
 
-// ======== // END OF EXERCISE FUNCTIONS // ======== //
+// ========= // END OF EXERCISE FUNCTIONS // ========= //
 
 // ======== // MISC FUNCTIONS // ======== //
 function restricted(req, res, next) {
