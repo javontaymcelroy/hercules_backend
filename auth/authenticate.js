@@ -54,16 +54,6 @@ function findById(id) {
 function getAll(query, res) {
   const { page = 1, limit = 1 } = query;
   return db("exercises")
-    .select(
-      "id",
-      "excerciseTitle",
-      "date",
-      "description",
-      "targetRegionArea",
-      "reps",
-      "amountLifted",
-      "customImg"
-    )
     .paginate(limit, page, true)
     .then(result => result);
 }
