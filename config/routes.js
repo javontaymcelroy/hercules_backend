@@ -9,7 +9,7 @@ const Users = require("../auth/authenticate");
 
 // ======== // SERVER ROUTES // ======== //
 module.exports = server => {
-  // ======== // POST // ======== //
+  // ========= // POST // ========= //
   server.post("/register", register);
   server.post("/login", login);
   server.post("/logout", logout);
