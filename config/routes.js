@@ -19,6 +19,7 @@ module.exports = server => {
   server.get("/users/:id", usersId, restricted);
   server.get("/exercises", exercises);
   server.get("/user/exercise/:id", getExercises);
+  server.get("/exercise/:id", getExerciseById);
   // ======== // PUT // ======== //
   server.put("/exercise/:id", exerciseUpdate);
   // ======== // DELETE // ======== //
@@ -152,6 +153,19 @@ function getExercises(req, res) {
     })
     .catch(err => {
       res.status(500).json(err);
+    });
+}
+
+function getExerciseById(req, res) {
+  const exerciseId = req.params.id;
+  db("exercises")
+    .where({ id: exerciseId })
+    .first()
+    .then(exercise => {
+      res.status(200).json(exercise);
+    })
+    .catch(error => {
+      res.status(500).json(error);
     });
 }
 
