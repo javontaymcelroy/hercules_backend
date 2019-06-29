@@ -8,7 +8,8 @@ module.exports = {
   add,
   find,
   findBy,
-  findById
+  findById,
+  findByQuery
 };
 
 // implementation details
@@ -48,4 +49,10 @@ function findById(id) {
   return db("user")
     .where({ id })
     .first();
+}
+
+function findByQuery(page = 0) {
+  return db("exercises")
+    .limit(1)
+    .offset(page);
 }

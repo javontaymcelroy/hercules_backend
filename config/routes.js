@@ -20,6 +20,7 @@ module.exports = server => {
   server.get("/exercises", exercises);
   server.get("/user/exercise/:id", getExercises);
   server.get("/exercise/:id", getExerciseById);
+  server.get("/dashboard", exercisePagination);
   // ======== // PUT // ======== //
   server.put("/exercise/:id", exerciseUpdate);
   // ======== // DELETE // ======== //
@@ -216,6 +217,17 @@ function exerciseDelete(req, res) {
   db("exercises")
     .where({ id })
     .del()
+    .then(exercise => {
+      res.status(200).json(exercise);
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    });
+}
+
+function exercisePagination(req, res) {
+  const { page } = req.query;
+  Users.findByQuery(page - 1)
     .then(exercise => {
       res.status(200).json(exercise);
     })
