@@ -13,16 +13,16 @@ module.exports = server => {
   server.post("/register", register);
   server.post("/login", login);
   server.post("/logout", logout);
-  server.post("/exercise", exercisePost);
-  server.post("/trackProgress", trackProgress);
+  server.post("/exercise", exercisePost, restricted);
+  server.post("/trackProgress", trackProgress, restricted);
   // ======== // GET // ======== //
   server.get("/users", users, restricted);
   server.get("/users/:id", usersId, restricted);
-  server.get("/exercises", exercises);
-  server.get("/user/exercise/:id", getExercises);
-  server.get("/exercise/:id", getExerciseById);
-  server.get("/exercise/:id/progressTracking", getProgressTracking);
-  server.get("/dashboard", exercisePagination);
+  server.get("/exercises", exercises, restricted);
+  server.get("/user/exercise/:id", getExercises, restricted);
+  server.get("/exercise/:id", getExerciseById, restricted);
+  server.get("/exercise/:id/progressTracking", getProgressTracking, restricted);
+  server.get("/dashboard", exercisePagination, restricted);
   // ======== // PUT // ======== //
   server.put("/exercise/:id", exerciseUpdate);
   // ======== // DELETE // ======== //
