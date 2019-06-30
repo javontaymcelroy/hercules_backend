@@ -181,11 +181,11 @@ function trackProgress(req, res) {
   const track = req.body;
   db.insert(track)
     .into("progressTracking")
-    .then(ids => {
+    .then(exercise_id => {
       res
         .status(201)
         .json([
-          ids[0],
+          exercise_id[0],
           progressTracking.date,
           progressTracking.reps,
           progressTracking.amountLifted
