@@ -9,11 +9,11 @@ exports.up = function(knex) {
       .inTable("user");
     tbl.string("exerciseTitle").notNullable();
     tbl.string("date").notNullable();
-    tbl.string("description").notNullable();
+    tbl.text("description").notNullable();
     tbl.string("targetRegionArea").notNullable();
     tbl.integer("reps").notNullable();
     tbl.integer("amountLifted");
-    tbl.string("customImg").notNullable();
+    tbl.text("customImg").notNullable();
   });
 };
 
