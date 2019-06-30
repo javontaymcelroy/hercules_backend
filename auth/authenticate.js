@@ -46,7 +46,9 @@ async function add(user) {
 }
 
 function findById(id) {
-  return db("user").where({ id });
+  return db("user")
+    .where({ id })
+    .first();
 }
 
 function findByQuery(page = 0) {
