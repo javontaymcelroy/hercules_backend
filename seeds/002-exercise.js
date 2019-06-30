@@ -5,7 +5,7 @@ exports.seed = function(knex) {
       // Inserts seed entries
       return knex("exercises").insert([
         {
-          user_id: 2,
+          user_id: 1,
           exerciseTitle: "Banded Glute Bridge",
           date: "06 11 2019",
           description:
@@ -17,7 +17,7 @@ exports.seed = function(knex) {
             "https://bootybymich.com/wp-content/uploads/2018/03/friday-week1_banded-glute-bridge-2-.jpg"
         },
         {
-          user_id: 2,
+          user_id: 1,
           exerciseTitle: "Side Lunges",
           date: "06 20 2019",
           description:
@@ -29,7 +29,7 @@ exports.seed = function(knex) {
             "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/side-lunge-1543424933.jpg"
         },
         {
-          user_id: 2,
+          user_id: 1,
           exerciseTitle: "Reverse Lunge to Overhead Press With Knee Drive",
           date: "06 25 2019",
           description:
@@ -41,7 +41,7 @@ exports.seed = function(knex) {
             "https://media.self.com/photos/5ade431c3cf6f501f025053a/2:1/pass/woman-lunging.jpg"
         },
         {
-          user_id: 2,
+          user_id: 1,
           exerciseTitle: "Crouching Tiger Push-up",
           date: "06 31 2019",
           description:
@@ -52,7 +52,7 @@ exports.seed = function(knex) {
           customImg: "https://cloudfront.timesnownews.com/media/Push-up.jpg"
         },
         {
-          user_id: 2,
+          user_id: 1,
           exerciseTitle: "Squat",
           date: "07 1 2019",
           description:
@@ -64,7 +64,7 @@ exports.seed = function(knex) {
             "https://www.verywellfit.com/thmb/iR8CxbDZqkHNO2P6cIgpet16osE=/2121x1414/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-559688779-5953ae105f9b584bfe718493.jpg"
         },
         {
-          user_id: 2,
+          user_id: 1,
           exerciseTitle: "Offset Load Bulgarian Split Squat",
           date: "07 4 2019",
           description:
@@ -76,7 +76,7 @@ exports.seed = function(knex) {
             "https://i.pinimg.com/originals/56/62/47/566247a1b3fd15f96b21fb686695ee70.jpg"
         },
         {
-          user_id: 2,
+          user_id: 1,
           exerciseTitle: "Jumping Rope",
           date: "07 5 2019",
           description:
@@ -88,7 +88,7 @@ exports.seed = function(knex) {
             "https://life.spartan.com/wp-content/uploads/2018/07/jump_rope.jpg"
         },
         {
-          user_id: 2,
+          user_id: 1,
           exerciseTitle: "Downward Facing Dog",
           date: "07 6 2019",
           description:
@@ -100,7 +100,7 @@ exports.seed = function(knex) {
             "https://cdn.prod.openfit.com/uploads/2017/05/29100223/downward-facing-dog-micki-duran-yoga52.jpg"
         },
         {
-          user_id: 2,
+          user_id: 1,
           exerciseTitle: "Donkey Kicks",
           date: "07 6 2019",
           description:
@@ -112,7 +112,7 @@ exports.seed = function(knex) {
             "https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/S9BPJEp7ioxrxk50/young-woman-doing-a-butt-firming-fitness-workout-for-strength-training-her-legs-and-glutes-fit-girl-doing-donkey-kick-kickbacks-exercise-toning-her-body-outside-in-summer_hanfcmgge_thumbnail-full01.png"
         },
         {
-          user_id: 2,
+          user_id: 1,
           exerciseTitle: "Hip Thrusts",
           date: "07 11 2019",
           description:
@@ -124,7 +124,7 @@ exports.seed = function(knex) {
             "https://cdn-ami-drupal.heartyhosting.com/sites/muscleandfitness.com/files/media/barbell-hip-thruster-1109.jpg"
         },
         {
-          user_id: 2,
+          user_id: 1,
           exerciseTitle: "Rear Delt Raise",
           date: "07 14 2019",
           description:
@@ -136,7 +136,7 @@ exports.seed = function(knex) {
             "https://focusphysique.com/wp-content/uploads/2018/04/Underdeveloped-Rear-Delts.jpeg"
         },
         {
-          user_id: 2,
+          user_id: 1,
           exerciseTitle: "Bench Press",
           date: "07 25 2019",
           description:
