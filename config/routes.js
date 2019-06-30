@@ -14,12 +14,14 @@ module.exports = server => {
   server.post("/login", login);
   server.post("/logout", logout);
   server.post("/exercise", exercisePost);
+  server.post("/trackProgress", trackProgress);
   // ======== // GET // ======== //
   server.get("/users", users, restricted);
   server.get("/users/:id", usersId, restricted);
   server.get("/exercises", exercises);
   server.get("/user/exercise/:id", getExercises);
   server.get("/exercise/:id", getExerciseById);
+  server.get("/exercise/:id/progressTracking", getProgressTracking);
   server.get("/dashboard", exercisePagination);
   // ======== // PUT // ======== //
   server.put("/exercise/:id", exerciseUpdate);
@@ -149,12 +151,47 @@ function getExercises(req, res) {
       if (exercises) {
         res.status(200).json(exercises);
       } else {
-        res.status(404).json({ message: "Lol, I cant find yo ID..." });
+        res.status(404).json({ message: "Lol, I cant find the ID..." });
       }
     })
     .catch(err => {
       res.status(500).json(err);
     });
+}
+
+function getProgressTracking(req, res) {
+  const id = req.params.id;
+  db("progressTracking")
+    .where({ exercise_id: id })
+    .then(progressTrack => {
+      if (progressTrack) {
+        res.status(200).json(progressTrack);
+      } else {
+        res.status(404).json({
+          message: "Sorry, I could not retrieve the progress history! :("
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    });
+}
+
+function trackProgress(req, res) {
+  const track = req.body;
+  db.insert(track)
+    .into("progressTracking")
+    .then(ids => {
+      res
+        .status(201)
+        .json([
+          ids[0],
+          progressTracking.date,
+          progressTracking.reps,
+          progressTracking.amountLifted
+        ]);
+    })
+    .catch(err => res.status(500).json(err));
 }
 
 function getExerciseById(req, res) {
