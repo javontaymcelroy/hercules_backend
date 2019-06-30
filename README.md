@@ -82,3 +82,22 @@ For Backend Devs: To get this project started on your local machine, clone the r
     "customImg": "https://s27689.pcdn.co/wp-content/uploads/2019/01/shutterstock_430898461.png"
 }
 ```
+
+### 🏃‍♀️ Progress Tracking Endpoints 🏋️‍♀️
+
+
+| Request        | Route           | Description  |
+| ------------- |:-------------:| -----:|
+| GET      | /exercise/:id/progressTracking | returns all progress tracking data from specific exercise. 🔥 |
+| POST      | /trackProgress | expects a json object that requires the fields {  "exercise_id": 2 "date": "May 16, 2019", "reps": integer, "amountLifted": integer }. |
+
+### Example of Progress Tracking object:
+
+```
+{
+    "exercise_id": 2,
+    "date": "May 16, 2019",
+    "reps": 25,
+    "amountLifted": 65
+}
+```
