@@ -1,6 +1,6 @@
 exports.seed = function(knex) {
   return knex("progressTracking")
-    .truncate()
+    .del()
     .then(function() {
       // Inserts seed entries
       return knex("progressTracking").insert([
