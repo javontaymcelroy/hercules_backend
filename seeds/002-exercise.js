@@ -61,7 +61,7 @@ exports.seed = function(knex) {
           reps: 35,
           amountLifted: 40,
           customImg:
-            "https://www.verywellfit.com/thmb/iR8CxbDZqkHNO2P6cIgpet16osE=/2121x1414/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-559688779-5953ae105f9b584bfe718493.jpg"
+            "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/leg-day-at-the-gym-royalty-free-image-614107160-1541627727.jpg"
         },
         {
           user_id: 1,
