@@ -10,7 +10,7 @@ exports.seed = function(knex) {
           exerciseTitle: "Deadlifts",
           date: "06 11 2019",
           description:
-            "The deadlift is going to develop almost every muscle in the body. It’s predominantly working the hamstrings, glutes, and lower back; but you’re also using calves and quads. Not to mention the back, lats, shoulders, traps in the upper body; and the core for stabilizing yourself with a heavy weight.",
+            "The deadlift is going to develop almost every muscle in the body.",
           targetRegionArea: "Legs",
           reps: 5,
           amountLifted: 120,
@@ -23,7 +23,7 @@ exports.seed = function(knex) {
           exerciseTitle: "Back Workouts",
           date: "06 11 2019",
           description:
-            "The deadlift is going to develop almost every muscle in the body. It’s predominantly working the hamstrings, glutes, and lower back; but you’re also using calves and quads. Not to mention the back, lats, shoulders, traps in the upper body; and the core for stabilizing yourself with a heavy weight.",
+            "The deadlift is going to develop almost every muscle in the body.",
           targetRegionArea: "Back",
           reps: 12,
           amountLifted: 50,
@@ -36,7 +36,7 @@ exports.seed = function(knex) {
           exerciseTitle: "Shoulders Workouts",
           date: "06 11 2019",
           description:
-            "The deadlift is going to develop almost every muscle in the body. It’s predominantly working the hamstrings, glutes, and lower back; but you’re also using calves and quads. Not to mention the back, lats, shoulders, traps in the upper body; and the core for stabilizing yourself with a heavy weight.",
+            "The deadlift is going to develop almost every muscle in the body.",
           targetRegionArea: "Shoulders",
           reps: 5,
           amountLifted: 45,
