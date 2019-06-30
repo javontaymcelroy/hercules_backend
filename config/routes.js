@@ -57,7 +57,10 @@ function login(req, res) {
         res.status(200).json({
           message: `Welcome to Hercules, ${user.firstName}!`,
           token,
-          id
+          id,
+          username,
+          firstName,
+          lastName
         });
       } else {
         res.status(401).json({ message: "Invalid credentials" });
