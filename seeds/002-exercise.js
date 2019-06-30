@@ -6,7 +6,6 @@ exports.seed = function(knex) {
       return knex("exercises").insert([
         {
           user_id: 1,
-          id: 1,
           exerciseTitle: "Deadlifts",
           date: "06 11 2019",
           description:
@@ -19,7 +18,6 @@ exports.seed = function(knex) {
         },
         {
           user_id: 1,
-          id: 2,
           exerciseTitle: "Back Workouts",
           date: "06 11 2019",
           description:
@@ -32,7 +30,6 @@ exports.seed = function(knex) {
         },
         {
           user_id: 1,
-          id: 3,
           exerciseTitle: "Shoulders Workouts",
           date: "06 11 2019",
           description:

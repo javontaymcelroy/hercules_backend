@@ -1,4 +1,4 @@
-# 🏋️‍♂️ HERCULES API BACKEND  🏋️‍♀️
+# 🏋️‍♂️ HERCULES API BACKEND 🏋️‍♀️
 
 🗒Hercules is a workout app journal that allows users to track their workout progress! Users can also create, read, update, and delete their exercises.
 
@@ -8,16 +8,15 @@ For Front-End Devs: https://hercules-backend.herokuapp.com/ 👈 Link to the API
 
 For Backend Devs: To get this project started on your local machine, clone the repo and open the directory in your chosen terminal and run yarn to install the dependacies. Then, making sure you're in the root folder of the app, run yarn server and you should be good to go! :)
 
-
-## ⚡️  Endpoints
+## ⚡️ Endpoints
 
 ### Onboarding Process
 
-| Request        | Route           | Description  |
-| ------------- |:-------------:| -----:|
-| POST      | /register | expects an object that takes in { username, firstName, lastName, emailAddress, password } |
-| POST      | /login | expects an object that takes in { username, password }, returns a token for the user. |
-| POST      | /logout | destroys the session and logs out the user. |
+| Request |   Route   |                                                                               Description |
+| ------- | :-------: | ----------------------------------------------------------------------------------------: |
+| POST    | /register | expects an object that takes in { username, firstName, lastName, emailAddress, password } |
+| POST    |  /login   |     expects an object that takes in { username, password }, returns a token for the user. |
+| POST    |  /logout  |                                               destroys the session and logs out the user. |
 
 ### Example of Register object:
 
@@ -33,11 +32,11 @@ For Backend Devs: To get this project started on your local machine, clone the r
 
 ### 👩‍💻 Users Endpoints 👨‍💻
 
-| Request        | Route           | Description  |
-| ------------- |:-------------:| -----:|
-| GET      | /users | returns a list of all users in the database. PROTECTED |
-| GET      | /users/:id | Returns user by ID. PROTECTED |
-| GET      | /user/exercise/:id | returns exercises ONLY belonging to a specific user. |
+| Request |       Route        |                                            Description |
+| ------- | :----------------: | -----------------------------------------------------: |
+| GET     |       /users       | returns a list of all users in the database. PROTECTED |
+| GET     |     /users/:id     |                          Returns user by ID. PROTECTED |
+| GET     | /user/exercise/:id |   returns exercises ONLY belonging to a specific user. |
 
 ### Example of Return:
 
@@ -58,15 +57,14 @@ For Backend Devs: To get this project started on your local machine, clone the r
 
 ### 🏃‍♀️ Exercise Endpoints 🏋️‍♀️
 
-
-| Request        | Route           | Description  |
-| ------------- |:-------------:| -----:|
-| GET      | /dashboard?page=1 | returns 1 exercise per page. PAGINATION! 🔥 |
-| GET      | /exercises | returns a list of all exercises that exists within the database. |
-| GET      | /exercise/:id | returns an OBJECT of a single exercise by the id. |
-| POST      | /exercise| expects an json object that requires the fields { exerciseTitle, date, description, targetRegionArea, reps (integer), amountLifted (integer), customImg } |
-| PUT      | /exercise/:id | allows updating to the exercise object. |
-| DELETE      | /exercise/:id | deletes object exercise from the array. |
+| Request |       Route       |                                                                                                                                               Description |
+| ------- | :---------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| GET     | /dashboard?page=1 |                                                                                                               returns 1 exercise per page. PAGINATION! 🔥 |
+| GET     |    /exercises     |                                                                                          returns a list of all exercises that exists within the database. |
+| GET     |   /exercise/:id   |                                                                                                         returns an OBJECT of a single exercise by the id. |
+| POST    |     /exercise     | expects an json object that requires the fields { exerciseTitle, date, description, targetRegionArea, reps (integer), amountLifted (integer), customImg } |
+| PUT     |   /exercise/:id   |                                                                                                                   allows updating to the exercise object. |
+| DELETE  |   /exercise/:id   |                                                                                                                   deletes object exercise from the array. |
 
 ### Example of Exercise object:
 
@@ -85,11 +83,10 @@ For Backend Devs: To get this project started on your local machine, clone the r
 
 ### 🏃‍♀️ Progress Tracking Endpoints 🏋️‍♀️
 
-
-| Request        | Route           | Description  |
-| ------------- |:-------------:| -----:|
-| GET      | /exercise/:id/progressTracking | returns all progress tracking data from specific exercise. 🔥 |
-| POST      | /trackProgress | expects a json object that requires the fields {  "exercise_id": 2 "date": "May 16, 2019", "reps": integer, "amountLifted": integer }. |
+| Request |             Route              |                                                                                                                           Description |
+| ------- | :----------------------------: | ------------------------------------------------------------------------------------------------------------------------------------: |
+| GET     | /exercise/:id/progressTracking |                                                                         returns all progress tracking data from specific exercise. 🔥 |
+| POST    |         /trackProgress         | expects a json object that requires the fields { "exercise_id": 2 "date": "May 16, 2019", "reps": integer, "amountLifted": integer }. |
 
 ### Example of Progress Tracking object:
 
