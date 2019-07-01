@@ -6,6 +6,18 @@ exports.seed = function(knex) {
       return knex("exercises").insert([
         {
           user_id: 1,
+          exerciseTitle: "Reverse Lunge to Overhead Press With Knee Drive",
+          date: "06 25 2019",
+          description:
+            "Start standing with your feet shoulder-width apart. Hold a dumbbell in your right hand and rest it on your shoulder. Step back (about 2 feet) with your right foot, landing on the ball of your right foot and keeping your heel off the ground. Bend both knees to create two 90-degree angles with your legs. In this position, your shoulders should be directly above your hips and your chest should be upright. Your left shin should be perpendicular to the floor and your left knee should be stacked above your left ankle. Your butt and core should be engaged. Push through the heel of your left foot to stand up straight. As you do, press the weight directly overhead and drive your right knee in toward your chest. This is 1 rep. Hold for a beat, and then step back into a reverse lunge to immediately go into the next rep.",
+          targetRegionArea: "Shoulders",
+          reps: 5,
+          amountLifted: 45,
+          customImg:
+            "https://media.self.com/photos/5ade431c3cf6f501f025053a/2:1/pass/woman-lunging.jpg"
+        },
+        {
+          user_id: 1,
           exerciseTitle: "Banded Glute Bridge",
           date: "06 11 2019",
           description:
@@ -27,18 +39,6 @@ exports.seed = function(knex) {
           amountLifted: 25,
           customImg:
             "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/side-lunge-1543424933.jpg"
-        },
-        {
-          user_id: 1,
-          exerciseTitle: "Reverse Lunge to Overhead Press With Knee Drive",
-          date: "06 25 2019",
-          description:
-            "Start standing with your feet shoulder-width apart. Hold a dumbbell in your right hand and rest it on your shoulder. Step back (about 2 feet) with your right foot, landing on the ball of your right foot and keeping your heel off the ground. Bend both knees to create two 90-degree angles with your legs. In this position, your shoulders should be directly above your hips and your chest should be upright. Your left shin should be perpendicular to the floor and your left knee should be stacked above your left ankle. Your butt and core should be engaged. Push through the heel of your left foot to stand up straight. As you do, press the weight directly overhead and drive your right knee in toward your chest. This is 1 rep. Hold for a beat, and then step back into a reverse lunge to immediately go into the next rep.",
-          targetRegionArea: "Shoulders",
-          reps: 5,
-          amountLifted: 45,
-          customImg:
-            "https://media.self.com/photos/5ade431c3cf6f501f025053a/2:1/pass/woman-lunging.jpg"
         },
         {
           user_id: 1,
